@@ -1,6 +1,6 @@
-@smoke
 Feature: Locked Out User Verification
 
+  @smoke
   Scenario: Verify locked out user cannot login
     Given User navigates to the Saucedemo login page
     When User logs in with username "locked_out_user" and password "secret_sauce"

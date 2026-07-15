@@ -1,12 +1,12 @@
-@smoke
 Feature: Saucedemo Login
 
-  @Key:sauceLogin 
+  @smoke @Key:sauceLogin 
   Scenario: Successful login with valid credentials
     Given User navigates to the Saucedemo login page
     When User logs in with valid credentials
     Then User should be redirected to the products page
 
+  @smoke
   Scenario Outline: Login with invalid credentials
     Given User navigates to the Saucedemo login page
     When User logs in with username "<username>" and password "<password>"
@@ -19,6 +19,7 @@ Feature: Saucedemo Login
       | wrong_user    | secret_sauce | Epic sadface: Username and password do not match any user in this service |
       | standard_user | wrong_pass   | Epic sadface: Username and password do not match any user in this service |
 
+  @smoke
   Scenario Outline: Verify login behavior for all user types
     Given User navigates to the Saucedemo login page
     When User logs in with username "<username>" and password "secret_sauce"
